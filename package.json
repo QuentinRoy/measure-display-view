@@ -4,6 +4,10 @@
   "description": "A small view to measure the physical size of a display",
   "author": "Quentin Roy <quentin@quentinroy.fr>",
   "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuentinRoy/measure-display-view.git"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./style.css": "./lib/screen-size.css"
@@ -19,10 +23,11 @@
   ],
   "devDependencies": {
     "eslint": "^6.8.0",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.4",
     "serve": "^11.3.0"
   },
   "scripts": {
     "start": "serve ."
-  }
+  },
+  "private": false
 }
