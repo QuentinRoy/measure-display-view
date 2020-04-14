@@ -1,0 +1,20 @@
+#control,
+#view,
+#result {
+  margin: 50px 0;
+}
+
+#control {
+  width: 100%;
+  display: flex;
+}
+
+#control input {
+  margin-left: 1em;
+  flex-grow: 1;
+}
+
+#content {
+  width: 800px;
+  margin: 0 auto;
+}

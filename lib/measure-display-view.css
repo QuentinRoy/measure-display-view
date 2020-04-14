@@ -1,0 +1,153 @@
+.measure-display-view {
+  --credit-background: #ebebeb;
+  --chip-background: #c2c2c2;
+  --ruler-width: 2px;
+  --ruler-length: 100px;
+  --ruler-style: solid;
+  --static-ruler-color: #474747;
+  --interactive-ruler-color: #3f81de;
+  --hovered-interactive-ruler-color: var(--interactive-ruler-color);
+  --active-interactive-ruler-color: #66a1f3;
+  --hovered-interactive-ruler-shadow: rgba(122, 177, 255, 0.15);
+  --active-interactive-ruler-shadow: rgba(122, 177, 255, 0.1);
+
+  --drag-area-width: 10px;
+
+  --mm-px-ratio: 1;
+
+  /* All dimensions below are supposed to be mm. However we do not
+   * use the mm units, but instead pixel times var(--mm-px-ratio).
+   */
+
+  --credit-width: 85.6;
+  --credit-height: 53.98;
+  --credit-rounded-corners: 3;
+
+  --chip-top: 16;
+  --chip-left: 8;
+  --chip-width: 13;
+  --chip-height: 12;
+  --chip-rounded-corners: 2;
+}
+
+.measure-display-view,
+.measure-display-view div {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.measure-display-view {
+  display: inline-block;
+  position: relative;
+}
+.measure-display-view.vertical-rulers {
+  padding: var(--ruler-length) var(--ruler-width);
+}
+.measure-display-view.horizontal-rulers {
+  padding: var(--ruler-width) var(--ruler-length);
+}
+.measure-display-view .top-ruler,
+.measure-display-view .right-ruler,
+.measure-display-view .bottom-ruler,
+.measure-display-view .left-ruler {
+  display: none;
+  position: absolute;
+  border-radius: var(--ruler-width);
+  background-color: var(--static-ruler-color);
+}
+.measure-display-view.horizontal-rulers .top-ruler,
+.measure-display-view.horizontal-rulers .bottom-ruler {
+  display: block;
+}
+/* vertical and horizontal rulers are not supported. Priority is arbitrarily
+ * given to horizontal rulers.
+ */
+.measure-display-view.vertical-rulers:not(.horizontal-rulers) .left-ruler,
+.measure-display-view.vertical-rulers:not(.horizontal-rulers) .right-ruler {
+  display: block;
+}
+.measure-display-view .left-ruler,
+.measure-display-view .right-ruler {
+  height: calc(
+    (var(--credit-height) * var(--mm-px-ratio) * 1px + var(--ruler-length) * 2)
+  );
+  width: var(--ruler-width);
+  top: 0;
+}
+.measure-display-view .left-ruler {
+  left: 0;
+}
+.measure-display-view .right-ruler {
+  right: 0;
+}
+.measure-display-view .top-ruler,
+.measure-display-view .bottom-ruler {
+  left: 0;
+  width: 100%;
+  height: var(--ruler-width);
+}
+.measure-display-view .top-ruler {
+  top: 0;
+}
+.measure-display-view .bottom-ruler {
+  bottom: 0;
+}
+.measure-display-view .interactive-ruler {
+  background-color: var(--interactive-ruler-color);
+}
+@media (hover: hover) {
+  .measure-display-view .interactive-ruler:hover {
+    background-color: var(--hovered-interactive-ruler-color);
+    box-shadow: 0 0 3px 3px var(--hovered-interactive-ruler-shadow);
+  }
+}
+.measure-display-view .interactive-ruler.active {
+  background-color: var(--active-interactive-ruler-color);
+  box-shadow: 0 0 3px 3px var(--active-interactive-ruler-shadow);
+}
+.measure-display-view .top-ruler.interactive-ruler,
+.measure-display-view .bottom-ruler.interactive-ruler {
+  cursor: ns-resize;
+}
+.measure-display-view .left-ruler.interactive-ruler,
+.measure-display-view .right-ruler.interactive-ruler {
+  cursor: ew-resize;
+}
+.measure-display-view .rulers .drag-area {
+  position: absolute;
+  width: calc(100% + var(--drag-area-width));
+  height: calc(100% + var(--drag-area-width));
+  border-radius: var(--drag-area-width);
+  left: calc(var(--drag-area-width) * -0.5);
+  top: calc(var(--drag-area-width) * -0.5);
+}
+
+.measure-display-view .credit {
+  position: relative;
+  background-color: var(--credit-background);
+  --rounded-corners: var(--credit-rounded-corners);
+  --top: 0;
+  --left: 0;
+  --width: var(--credit-width);
+  --height: var(--credit-height);
+}
+
+.measure-display-view .credit .chip {
+  position: absolute;
+  background-color: var(--chip-background);
+  --rounded-corners: var(--chip-rounded-corners);
+  --top: var(--chip-top);
+  --left: var(--chip-left);
+  --width: var(--chip-width);
+  --height: var(--chip-height);
+}
+
+.measure-display-view .credit,
+.measure-display-view .credit .chip {
+  top: calc(var(--top) * var(--mm-px-ratio) * 1px);
+  left: calc(var(--left) * var(--mm-px-ratio) * 1px);
+  width: calc(var(--width) * var(--mm-px-ratio) * 1px);
+  height: calc(var(--height) * var(--mm-px-ratio) * 1px);
+  border-radius: calc(var(--rounded-corners) * var(--mm-px-ratio) * 1px);
+}

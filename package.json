@@ -1,0 +1,28 @@
+{
+  "name": "@quentinroy/measure-display-view",
+  "version": "1.0.0-alpha.0",
+  "description": "A small view to measure the physical size of a display",
+  "author": "Quentin Roy <quentin@quentinroy.fr>",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./style.css": "./lib/screen-size.css"
+  },
+  "files": [
+    "./lib/"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "size",
+    "screen"
+  ],
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "prettier": "^2.0.2",
+    "serve": "^11.3.0"
+  },
+  "scripts": {
+    "start": "serve ."
+  }
+}
