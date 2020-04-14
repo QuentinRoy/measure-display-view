@@ -1,6 +1,7 @@
 # Measure Display View
 
-This is a small utility to let the user measure their display from a credit card.
+This is a small utility to let the user measure their display from a credit
+card.
 
 ## Install with NPM or Yarn
 
@@ -31,7 +32,7 @@ let mdv = MeasureDisplayView({
   // Required: where to mount the view.
   node: document.querySelector("#target-node"),
   // Optional: Whether vertical or horizontal rulers should be used.
-  rulerOrientation: Directions.horizontal,
+  rulersOrientation: Directions.horizontal,
   // Optional: function to call when the ratio has changed.
   onChange(newPxMmRatio) {},
   // Optional: the initial ratio.
