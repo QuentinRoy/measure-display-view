@@ -1,15 +1,14 @@
 .measure-display-view {
   --credit-background: #ebebeb;
   --chip-background: #c2c2c2;
-  --ruler-width: 2px;
-  --ruler-length: 100px;
-  --ruler-style: solid;
-  --static-ruler-color: #474747;
-  --interactive-ruler-color: #3f81de;
-  --hovered-interactive-ruler-color: var(--interactive-ruler-color);
-  --active-interactive-ruler-color: #66a1f3;
-  --hovered-interactive-ruler-shadow: rgba(122, 177, 255, 0.15);
-  --active-interactive-ruler-shadow: rgba(122, 177, 255, 0.1);
+  --rulers-width: 2px;
+  --rulers-length: 100px;
+  --static-rulers-color: #474747;
+  --interactive-rulers-color: #3f81de;
+  --hovered-interactive-rulers-color: var(--interactive-rulers-color);
+  --active-interactive-rulers-color: #66a1f3;
+  --hovered-interactive-rulers-shadow: rgba(122, 177, 255, 0.15);
+  --active-interactive-rulers-shadow: rgba(122, 177, 255, 0.1);
 
   --drag-area-width: 10px;
 
@@ -42,10 +41,16 @@
   position: relative;
 }
 .measure-display-view.vertical-rulers {
-  padding: var(--ruler-length) var(--ruler-width);
+  padding: var(--rulers-length) var(--rulers-width);
+}
+.measure-display-view.vertical-rulers.active {
+  cursor: ew-resize;
 }
 .measure-display-view.horizontal-rulers {
-  padding: var(--ruler-width) var(--ruler-length);
+  padding: var(--rulers-width) var(--rulers-length);
+}
+.measure-display-view.horizontal-rulers.active {
+  cursor: ns-resize;
 }
 .measure-display-view .top-ruler,
 .measure-display-view .right-ruler,
@@ -53,8 +58,8 @@
 .measure-display-view .left-ruler {
   display: none;
   position: absolute;
-  border-radius: var(--ruler-width);
-  background-color: var(--static-ruler-color);
+  border-radius: var(--rulers-width);
+  background-color: var(--static-rulers-color);
 }
 .measure-display-view.horizontal-rulers .top-ruler,
 .measure-display-view.horizontal-rulers .bottom-ruler {
@@ -70,9 +75,9 @@
 .measure-display-view .left-ruler,
 .measure-display-view .right-ruler {
   height: calc(
-    (var(--credit-height) * var(--mm-px-ratio) * 1px + var(--ruler-length) * 2)
+    (var(--credit-height) * var(--mm-px-ratio) * 1px + var(--rulers-length) * 2)
   );
-  width: var(--ruler-width);
+  width: var(--rulers-width);
   top: 0;
 }
 .measure-display-view .left-ruler {
@@ -85,7 +90,7 @@
 .measure-display-view .bottom-ruler {
   left: 0;
   width: 100%;
-  height: var(--ruler-width);
+  height: var(--rulers-width);
 }
 .measure-display-view .top-ruler {
   top: 0;
@@ -94,17 +99,17 @@
   bottom: 0;
 }
 .measure-display-view .interactive-ruler {
-  background-color: var(--interactive-ruler-color);
+  background-color: var(--interactive-rulers-color);
 }
 @media (hover: hover) {
   .measure-display-view .interactive-ruler:hover {
-    background-color: var(--hovered-interactive-ruler-color);
-    box-shadow: 0 0 3px 3px var(--hovered-interactive-ruler-shadow);
+    background-color: var(--hovered-interactive-rulers-color);
+    box-shadow: 0 0 3px 3px var(--hovered-interactive-rulers-shadow);
   }
 }
 .measure-display-view .interactive-ruler.active {
-  background-color: var(--active-interactive-ruler-color);
-  box-shadow: 0 0 3px 3px var(--active-interactive-ruler-shadow);
+  background-color: var(--active-interactive-rulers-color);
+  box-shadow: 0 0 3px 3px var(--active-interactive-rulers-shadow);
 }
 .measure-display-view .top-ruler.interactive-ruler,
 .measure-display-view .bottom-ruler.interactive-ruler {
