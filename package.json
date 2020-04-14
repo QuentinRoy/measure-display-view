@@ -13,7 +13,7 @@
     "./style.css": "./lib/screen-size.css"
   },
   "files": [
-    "./lib/"
+    "lib/"
   ],
   "type": "module",
   "license": "MIT",
