@@ -1,6 +1,6 @@
 {
   "name": "@quentinroy/measure-display-view",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "A small view to measure the physical size of a display",
   "author": "Quentin Roy <quentin@quentinroy.fr>",
   "main": "./lib/index.js",
