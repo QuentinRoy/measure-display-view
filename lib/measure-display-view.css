@@ -10,7 +10,7 @@
   --hovered-interactive-rulers-shadow: rgba(122, 177, 255, 0.15);
   --active-interactive-rulers-shadow: rgba(122, 177, 255, 0.1);
 
-  --drag-area-width: 10px;
+  --drag-area-width: 20px;
 
   --mm-px-ratio: 1;
 
