@@ -56,6 +56,7 @@
 .measure-display-view .right-ruler,
 .measure-display-view .bottom-ruler,
 .measure-display-view .left-ruler {
+  touch-action: none;
   display: none;
   position: absolute;
   border-radius: var(--rulers-width);
