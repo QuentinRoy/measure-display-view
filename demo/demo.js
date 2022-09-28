@@ -8,7 +8,7 @@ function update(ratio) {
   let dimensions = sc.getDisplayDimensions()
   result.innerHTML = `${Math.round(
     dimensions.width
-  )}mm&nbsp;×&nbsp;${Math.round(dimensions.height)}mm`
+  )}mm&nbsp;&times;&nbsp;${Math.round(dimensions.height)}mm`
   ratioInput.value = ratio
 }
 
