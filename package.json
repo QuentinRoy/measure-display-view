@@ -10,7 +10,7 @@
   },
   "exports": {
     ".": "./lib/index.js",
-    "./style.css": "./lib/screen-size.css"
+    "./style.css": "./lib/measure-display-view.css"
   },
   "files": [
     "lib/"
