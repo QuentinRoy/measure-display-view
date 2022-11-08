@@ -31,8 +31,5 @@
     "start": "serve .",
     "release": "standard-version"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "private": false
 }
