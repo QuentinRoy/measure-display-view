@@ -22,14 +22,15 @@
     "screen"
   ],
   "devDependencies": {
-    "eslint": "^8.24.0",
+    "eslint": "^8.27.0",
     "prettier": "^2.7.1",
-    "serve": "^14.0.1",
+    "serve": "^14.1.0",
     "standard-version": "^9.5.0"
   },
   "scripts": {
     "start": "serve .",
-    "release": "standard-version"
+    "release": "standard-version",
+    "lint": "eslint ."
   },
   "private": false
 }
