@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/QuentinRoy/measure-display-view/compare/v1.0.1...v1.0.2) (2022-11-08)
+
+
+### Bug Fixes
+
+* remove node engine requirements ([424bd36](https://github.com/QuentinRoy/measure-display-view/commit/424bd36512e6c1aee16bef0f18d5c5b5843e1828))
+
 ### [1.0.1](https://github.com/QuentinRoy/measure-display-view/compare/v1.0.0...v1.0.1) (2022-09-28)
 
 
